@@ -92,17 +92,24 @@
 </header>
 
 <!-- ============================= FEATURED STORY =============================
-     deadline1/deadline2/deadline3/deadline4 are four sequential captures of
-     the same Deadline Hollywood article (headline, opening paragraphs, the
-     Best Unproduced Projects list with the highlighted mention, and the
-     closing line about the list's writers) and are presented as a single
-     unit — one .press-feature card (new component, see style.css: same
-     bordered-panel/shadow language as .video-frame, just auto-height
-     instead of a fixed 16:9 crop so none of the four screenshots gets
-     cropped) holding all four images stacked with hairline dividers, one
-     shared kicker/caption, and no separate headings per image. .frame-tag/
-     .dot (defined for .video-frame, unused until now) labels the outlet on
-     the lead image. -->
+     deadline1/deadline2/deadline3 are sequential captures of the same
+     Deadline Hollywood article (headline, opening paragraphs, the Best
+     Unproduced Projects list with the highlighted mention) and are
+     presented as a single unit — one .press-feature card (new component,
+     see style.css: same bordered-panel/shadow language as .video-frame,
+     just auto-height instead of a fixed 16:9 crop so none of the
+     screenshots gets cropped) holding the images stacked with hairline
+     dividers, one shared kicker/caption, and no separate headings per
+     image. .frame-tag/.dot (defined for .video-frame, unused until now)
+     labels the outlet on the lead image.
+     A fourth screenshot (deadline4.jpg, the article's closing line about
+     the list's writers/Outlander/The Crow reboot) was removed per request
+     — the stack and .press-feature-media auto-height naturally close the
+     gap with no layout changes needed.
+     Moved to lead the page (was previously second, after the page header
+     it followed More Coverage) — pure reorder, no other change: this is
+     now the first content section, and More Coverage/Additional
+     recognition moved to the very bottom of the page instead. -->
 <section class="section news-feature-section">
   <div class="container">
     <div class="section-head">
@@ -116,7 +123,6 @@
           <img src="media/news/deadline1.jpg" alt="Deadline Hollywood headline: &quot;Coverfly Releases List Of Lists To Highlight Up and Coming Screenwriting Talent,&quot; by Peter White, December 8, 2023.">
           <img src="media/news/deadline2.jpg" alt="Opening paragraphs of the Deadline article: Coverfly has curated a list of lists of rising screenwriters, aggregating fellowships, competitions, and annual lists such as the Nicholl Fellowship, Final Draft's Big Break, and the Blood List.">
           <img src="media/news/deadline3.jpg" alt="Excerpt from the Deadline article listing Coverfly's Best Unproduced Projects, with &quot;A.M Lewis' All The Beautiful Things&quot; highlighted among the selections.">
-          <img src="media/news/deadline4.jpg" alt="Closing line from the Deadline article: writers on the list have credits on series such as Outlander, Snowfall, and The Crow reboot.">
         </div>
       </div>
       <div class="press-feature-copy">
@@ -138,7 +144,11 @@
      wescreenplay and artsmonth link out to their real published URLs;
      finalist is a standalone Coverfly stats capture with no corresponding
      article, so — same convention as the "Girls" entry on screenplays.html
-     — it has no read-more affordance. -->
+     — it has no read-more affordance.
+     Moved to the very bottom of the page per request (was previously
+     second, right after Featured Story) — pure reorder, no other change:
+     Featured Story now leads directly after the page header, and this
+     section is now the last piece of content before the footer. -->
 <section class="section-tight news-more-section">
   <div class="container">
     <div class="section-head">
@@ -146,24 +156,6 @@
       <h2>Additional recognition</h2>
     </div>
     <div class="reel-list reveal-on-scroll">
-
-      <article class="reel">
-        <div class="press-frame">
-          <span class="frame-tag"><span class="dot"></span>Arts October</span>
-          <img src="media/news/artsmonth.jpg" alt="October Is Arts Month feature introducing Annemarie (A.M.) Lewis, part of the site's Artist-a-Day series.">
-        </div>
-        <div>
-          <span class="reel-index">04</span>
-          <p class="press-kicker">Arts October — Artist Feature</p>
-          <h3>Artist of the Day: A.M. Lewis</h3>
-          <p>Featured as part of Arts October's Artist-a-Day series, spotlighting Lewis's path from a small town in New York to directing and starring in her first feature film in Colorado Springs.</p>
-          <div class="reel-meta">
-            <span>Artist-a-Day Feature</span>
-            <span>#ArtsOctober</span>
-          </div>
-          <a class="btn news-read" href="https://artsoctober.com/artist_a_day/a-m-lewis/" target="_blank" rel="noopener">Read the Feature &rarr;</a>
-        </div>
-      </article>
 
       <article class="reel">
         <div class="press-frame">
@@ -180,6 +172,24 @@
             <span>3 Finalist Awards</span>
             <span>March 2024</span>
           </div>
+        </div>
+      </article>
+
+      <article class="reel">
+        <div class="press-frame">
+          <span class="frame-tag"><span class="dot"></span>Arts October</span>
+          <img src="media/news/artsmonth.jpg" alt="October Is Arts Month feature introducing Annemarie (A.M.) Lewis, part of the site's Artist-a-Day series.">
+        </div>
+        <div>
+          <span class="reel-index">04</span>
+          <p class="press-kicker">Arts October — Artist Feature</p>
+          <h3>Artist of the Day: A.M. Lewis</h3>
+          <p>Featured as part of Arts October's Artist-a-Day series, spotlighting Lewis's path from a small town in New York to directing and starring in her first feature film in Colorado Springs.</p>
+          <div class="reel-meta">
+            <span>Artist-a-Day Feature</span>
+            <span>#ArtsOctober</span>
+          </div>
+          <a class="btn news-read" href="https://artsoctober.com/artist_a_day/a-m-lewis/" target="_blank" rel="noopener">Read the Feature &rarr;</a>
         </div>
       </article>
 
