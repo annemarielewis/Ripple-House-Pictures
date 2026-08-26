@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Ripple House</title>
+<meta name="description" content="Writer, director, and producer creating socially impactful, emotionally resonant films — the mission, passion, and experience behind Ripple House.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Favicon — cropped/downsized from the existing ripple-rings mark in
+     media/logo.png (see .mission-glow/.mission-rings, the same motif used
+     throughout the site), not a new graphic. -->
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="media/favicon-180.png">
+<link rel="shortcut icon" href="media/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- No .intro-pending on this page's <body> — that class/timeline only
+     applies to the homepage's freeze-frame hero (see js/main.js
+     beginEntrance(), gated on the hero's own <video> elements existing).
+     This page has no hero, so the nav should just be visible immediately,
+     same as any other subpage. -->
+
+<!-- ============================= NAV ============================= -->
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand-lockup">
+      <img src="media/logo.png" alt="" class="brand-logo">
+      <span class="brand">Ripple House</span>
+    </a>
+    <div class="nav-controls">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="classes.html">Classes</a></li>
+        <li class="has-submenu">
+          <a class="nav-parent" role="button" tabindex="0" aria-haspopup="true">
+            Accolades
+            <span class="submenu-caret" aria-hidden="true"></span>
+          </a>
+          <ul class="submenu">
+            <li><a href="news.html">In the News</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-submenu">
+          <a class="nav-parent" role="button" tabindex="0" aria-haspopup="true">
+            Work
+            <span class="submenu-caret" aria-hidden="true"></span>
+          </a>
+          <ul class="submenu">
+            <li><a href="claymation.html">Claymation</a></li>
+            <li><a href="live-action.html">Live Action</a></li>
+            <li><a href="screenplays.html">Screenplays</a></li>
+            <li><a href="music.html">Music</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================= ABOUT — tabbed bio + cinematic reel =============================
+     Two-column, full-viewport-height layout: tab-switched written content on
+     the left (About / My Passion / Experience), a large local autoplaying
+     video on the right — see the "ABOUT — tabbed bio + cinematic reel"
+     block in css/style.css for the full styling rationale. -->
+<section class="about-split">
+  <h1 class="visually-hidden">About Ripple House</h1>
+  <div class="about-left">
+    <div class="about-tabs" role="tablist" aria-label="About sections">
+      <button type="button" class="about-tab is-active" role="tab" id="about-tab-about" aria-controls="about-panel-about" aria-selected="true" data-tab="about">About</button>
+      <button type="button" class="about-tab" role="tab" id="about-tab-passion" aria-controls="about-panel-passion" aria-selected="false" data-tab="passion">My Passion</button>
+      <button type="button" class="about-tab" role="tab" id="about-tab-experience" aria-controls="about-panel-experience" aria-selected="false" data-tab="experience">Experience</button>
+    </div>
+
+    <div class="about-panels">
+      <div class="about-panel" id="about-panel-about" role="tabpanel" aria-labelledby="about-tab-about" data-panel="about">
+        <p class="lede">I am a writer, director, and producer dedicated to creating entertaining, socially impactful narratives that transform underrepresented experiences into emotionally resonant films that foster empathy, connection, and meaningful dialogue. The goal of my production LLC is to help ensure that disabled filmmakers, like myself, and storytellers from low-income backgrounds have access to the support and opportunities needed to bring their stories to life.</p>
+        <!-- INSERT URL: replace the "#" below with the link for "your long-term goals" -->
+        <p class="lede">You can read more about me and my long-term goals at <a href="#" target="_blank" rel="noopener">this link</a>.</p>
+      </div>
+
+      <div class="about-panel" id="about-panel-passion" role="tabpanel" aria-labelledby="about-tab-passion" data-panel="passion" hidden>
+        <p class="lede">My passion for filmmaking and storytelling is driven by its empathetic power to transcend and transform perceptions. Even if only for the duration of a book or a movie, a well-written story has the potential to somewhat transcend divisions by reminding us of our shared humanity. For a moment, we see the world as the main character.</p>
+      </div>
+
+      <div class="about-panel" id="about-panel-experience" role="tabpanel" aria-labelledby="about-tab-experience" data-panel="experience" hidden>
+        <!-- INSERT URL: replace the "#" below with your portfolio link -->
+        <p class="lede">I have experience writing and directing across diverse mediums, including live action, animation, and claymation. I have directed and produced a feature film currently in post-production, written four feature-length screenplays (one currently in post-production and one in pre-production), and created a ten-episode limited series. <a href="#" target="_blank" rel="noopener">See my portfolio</a> for work samples.</p>
+        <p class="lede">Full projects and additional work are available for review upon execution of a signed NDA.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-right">
+    <div class="about-video-frame">
+      <video src="media/about_web.mp4" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" tabindex="-1"></video>
+      <div class="grain" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FAQ =============================
+     Moved here from index.html — sits directly under the tab content
+     and video above, same markup/classes/JS as before (the accordion
+     script in main.js is generic, not page-specific), so it behaves
+     identically to how it worked on the homepage. -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span><span class="num">01</span>Does being disabled affect your process?</span>
+          <span class="icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>I developed a neurodegenerative disease halfway through production of my first feature film, which stalled production for two years as I learned how to adapt and got the disease more under control.<br><br>This affects my process, of course, so I have to be mindful of my needs and limits. However, it has also given me more in terms of my storytelling—a desire to showcase the experience in ways that may help others—and I'm passionate about helping other disabled filmmakers!</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span><span class="num">02</span>If you do not have any self-funding or backing, how did you get your feature film funded?</span>
+          <span class="icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Great question! ;)<br><br>I spent years grassroots fundraising and partnered with five NGOs that sponsored the film as well. However, what mostly got it made was individuals in the local Colorado film community reading the script, caring about its message, and donating their time, resources, and equipment to help get the film made.<br><br>I am happily passing that help on to others in my community.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span><span class="num">03</span>What formal training do you have?</span>
+          <span class="icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>None! I have learned everything I know about film by asking to join sets and crews and learning as I've gone.<br><br>While I am 100% self-taught, my short-term goal is to learn more through formal workshops and classes and to be mentored by filmmakers further into their careers. I spread all the knowledge I have—and everything I continue to gain—to more independent filmmakers in my community, starting with myself and making it grow!</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span><span class="num">04</span>If you have no formal/traditional training, such as from a university, why teach classes?</span>
+          <span class="icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Great question! It's because I want to help others who, like myself, could not afford a traditional route be successful in making their projects—which requires a different and very specific set of skills.<br><br>I offer pay-what-you-can classes—all are welcome, regardless of finances—where I help other indie filmmakers without traditional, formal training learn the basics, learn how to self-teach from there, network, and get their projects made. To learn more, go to the Classes page.<br><br>I am all about increasing accessibility in film and media and limiting barriers wherever I can. However, this is currently the LLC's only source of income, so should you wish to take a class, please be honest in your choice of payment, as those who are able to pay help make spots possible for those who cannot afford them. :-)</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span><span class="num">05</span>How did you get into storytelling in film/media?</span>
+          <span class="icon"></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>My career in storytelling began at American Rivers, one of the nation’s leading water conservation NGOs, with offices across the country and a long history of advocacy for landmark protections such as the Clean Water Act. I independently approached the organization with an idea: use human-centered narrative storytelling to make important legal, scientific, and often complex environmental information accessible and meaningful to the general public. Rather than leading with policy or technical language, I wanted to tell stories about people and their relationships with rivers and water—and allow those stories to become the vehicle for understanding the larger issues. This was motivated by my advocacy in Western water conservation at the time and by seeing, again and again, how difficult these concepts could be for the average person to sink their teeth into.<br><br>From that idea, I conceived and pitched We Are Rivers, an educational narrative podcast. When the organization was initially unsure of the concept, I wrote, hosted, produced, and edited the first four episodes for free as a proof of concept. I was subsequently hired to continue writing, hosting, and audio-editing the series. We Are Rivers grew to more than 100,000 listens within months through word of mouth alone, earned a 4.9-star rating on Apple Podcasts, and became one of the organization’s most successful public-outreach, lead-generation, and fundraising initiatives—demonstrating the power of narrative strongly enough to inspire a broader storytelling arm within the NGO.<br><br>I also worked at Coverfly, the world’s largest screenwriting platform, where I helped create The Script Library, which became Coverfly’s most successful lead-generation tool to date. My work in the screenwriting industry also included writing educational content for WeScreenplay and helping emerging writers strengthen their craft.<br><br>I have since developed my own career as a screenwriter and filmmaker. I have written four feature screenplays and two episodic series, expanding from writing into the practical work of bringing stories all the way from the page to the screen. I wrote, produced, and directed my first feature, All the Beautiful Things, an ambitious independent production whose screenplay earned recognition in Deadline Hollywood.<br><br>Through every iteration of my career, the throughline has remained the same: using story not simply to entertain, but to translate complicated and deeply human ideas into something accessible, emotionally resonant, and difficult to ignore.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">Ripple House</a>
+        <p>A woman's narrative production LLC bringing important stories to life
+          through entertainment—soul medicine in syntactic sugar!</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="classes.html">Classes</a>
+          <a href="about.html">About</a>
+          <a href="index.html">Home</a>
+          <a href="news.html">News</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="claymation.html">Claymation</a>
+          <a href="live-action.html">Live Action</a>
+          <a href="screenplays.html">Screenplays</a>
+          <a href="music.html">Music</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+19703190560">(970) 319-0560</a>
+          <a href="mailto:alewis@ripplehouse.media">alewis@ripplehouse.media</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ripple House</span>
+      <span>Built as a static site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

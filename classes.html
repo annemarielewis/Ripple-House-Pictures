@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classes | Ripple House</title>
+<meta name="description" content="Ripple House classes — out of session, stay tuned.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Favicon — cropped/downsized from the existing ripple-rings mark in
+     media/logo.png (see .mission-glow/.mission-rings, the same motif used
+     throughout the site), not a new graphic. -->
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="media/favicon-180.png">
+<link rel="shortcut icon" href="media/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- No .intro-pending on this page's <body> — same as about.html/screenplays.html/
+     live-action.html, that class/timeline only applies to the homepage's
+     freeze-frame hero. This page has no hero, so the nav is visible
+     immediately. -->
+
+<!-- ============================= NAV ============================= -->
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand-lockup">
+      <img src="media/logo.png" alt="" class="brand-logo">
+      <span class="brand">Ripple House</span>
+    </a>
+    <div class="nav-controls">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="classes.html">Classes</a></li>
+        <li class="has-submenu">
+          <a class="nav-parent" role="button" tabindex="0" aria-haspopup="true">
+            Accolades
+            <span class="submenu-caret" aria-hidden="true"></span>
+          </a>
+          <ul class="submenu">
+            <li><a href="news.html">In the News</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-submenu">
+          <a class="nav-parent" role="button" tabindex="0" aria-haspopup="true">
+            Work
+            <span class="submenu-caret" aria-hidden="true"></span>
+          </a>
+          <ul class="submenu">
+            <li><a href="claymation.html">Claymation</a></li>
+            <li><a href="live-action.html">Live Action</a></li>
+            <li><a href="screenplays.html">Screenplays</a></li>
+            <li><a href="music.html">Music</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================= CLASSES =============================
+     A single full-height moment rather than a header-plus-sections page —
+     see "CLASSES page" in css/style.css. The pink ripple is the exact
+     .mission-glow/.mission-rings markup reused verbatim from the homepage
+     MISSION section (same classes, same @keyframes mission-ripple),
+     recentered and sized up behind the message via the .classes-hero
+     scoping rules in style.css. -->
+<section class="classes-hero">
+  <div class="mission-glow" aria-hidden="true"></div>
+  <div class="mission-rings" aria-hidden="true">
+    <span class="ring ring-1"></span>
+    <span class="ring ring-2"></span>
+    <span class="ring ring-3"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="container classes-hero-inner reveal-on-scroll">
+    <h1 class="classes-message">Out of session. Stay tuned!</h1>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">Ripple House</a>
+        <p>A woman's narrative production LLC bringing important stories to life
+          through entertainment—soul medicine in syntactic sugar!</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="classes.html">Classes</a>
+          <a href="about.html">About</a>
+          <a href="index.html">Home</a>
+          <a href="news.html">News</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="claymation.html">Claymation</a>
+          <a href="live-action.html">Live Action</a>
+          <a href="screenplays.html">Screenplays</a>
+          <a href="music.html">Music</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+19703190560">(970) 319-0560</a>
+          <a href="mailto:alewis@ripplehouse.media">alewis@ripplehouse.media</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ripple House</span>
+      <span>Built as a static site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

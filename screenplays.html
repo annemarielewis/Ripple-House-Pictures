@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screenplays | Ripple House</title>
+<meta name="description" content="Feature and episodic screenplays from Ripple House — All the Beautiful Things, Running to Places, My Brother the Priest, The Undeniable Innocence of Water Moccasins, and Girls.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Favicon — cropped/downsized from the existing ripple-rings mark in
+     media/logo.png (see .mission-glow/.mission-rings, the same motif used
+     throughout the site), not a new graphic. -->
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="media/favicon-180.png">
+<link rel="shortcut icon" href="media/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- No .intro-pending on this page's <body> — same as about.html, that
+     class/timeline only applies to the homepage's freeze-frame hero. This
+     page has no hero, so the nav is visible immediately, same as About. -->
+
+<!-- ============================= NAV ============================= -->
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand-lockup">
+      <img src="media/logo.png" alt="" class="brand-logo">
+      <span class="brand">Ripple House</span>
+    </a>
+    <div class="nav-controls">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      <ul class="nav-links">
+        <li><a href="classes.html">Classes</a></li>
+        <li class="has-submenu">
+          <a class="nav-parent" role="button" tabindex="0" aria-haspopup="true">
+            Accolades
+            <span class="submenu-caret" aria-hidden="true"></span>
+          </a>
+          <ul class="submenu">
+            <li><a href="news.html">In the News</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-submenu">
+          <a class="nav-parent" role="button" tabindex="0" aria-haspopup="true">
+            Work
+            <span class="submenu-caret" aria-hidden="true"></span>
+          </a>
+          <ul class="submenu">
+            <li><a href="claymation.html">Claymation</a></li>
+            <li><a href="live-action.html">Live Action</a></li>
+            <li><a href="screenplays.html">Screenplays</a></li>
+            <li><a href="music.html">Music</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================= PAGE HEADER =============================
+     Reuses the shared .page-header pattern already defined in css/style.css
+     for interior pages (eyebrow + h1 + lede, top padding pinned to clear
+     the fixed nav) — see the "PAGE HEADER (interior pages)" block in
+     style.css. The homepage's pink ripple motif — the exact
+     .mission-glow / .mission-rings markup and @keyframes mission-ripple
+     from the MISSION section on index.html — is reused verbatim here (same
+     classes, same animation), just resized/repositioned via the
+     .screenplays-header scoping rules in style.css so it fits this shorter
+     section without ever reaching the screenplay list below. -->
+<header class="page-header screenplays-header">
+  <div class="mission-glow" aria-hidden="true"></div>
+  <div class="mission-rings" aria-hidden="true">
+    <span class="ring ring-1"></span>
+    <span class="ring ring-2"></span>
+    <span class="ring ring-3"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="container page-header-inner">
+    <span class="eyebrow">Work</span>
+    <h1>Screenplays</h1>
+    <p class="lede">Feature and episodic scripts exploring grief, identity, and the family ties that both wound and heal — five stories in various stages, from post-production to the page.</p>
+  </div>
+</header>
+
+<!-- ============================= SCREENPLAY LIST =============================
+     Same understated, bordered-row list vocabulary as the FAQ list / track
+     list elsewhere on the site (see "Entry list" in style.css) rather than
+     a new boxed "card" component. Each entry below with a PDF is wrapped in
+     a single <a> covering the whole row — All the Beautiful Things, Running
+     to Places, My Brother the Priest, and The Undeniable Innocence of Water
+     Moccasins link to their existing PDFs in screenplay_excerpts/. Girls has
+     no PDF yet, so it renders as a plain, non-interactive row with a
+     "Coming Soon" badge instead of the "Read Screenplay" affordance — same
+     row treatment as the others, just not clickable. All titles, project
+     info lines, and synopses below are reproduced exactly as supplied. -->
+<section class="section screenplay-section">
+  <div class="container">
+    <!-- NDA notice — a small standing informational strip (not the JS-toggled
+         .form-msg used for contact-form feedback elsewhere), built from the
+         same border/panel/accent-color vocabulary as the rest of the site.
+         See "Page notice" in css/style.css. -->
+    <div class="page-notice">
+      <p>All scripts that have not yet been produced are excerpts from their first few pages. If you would like to read the complete feature or series, an NDA is required. Please email <a href="mailto:alewis@ripplehouse.media">alewis@ripplehouse.media</a> to acquire an NDA and receive the full screenplay.</p>
+    </div>
+    <div class="section-head">
+      <span class="eyebrow">Screenplays</span>
+      <h2>Selected work</h2>
+    </div>
+    <div class="screenplay-list reveal-on-scroll">
+
+      <a class="screenplay-entry" href="screenplay_excerpts/atbt.pdf" target="_blank" rel="noopener">
+        <div class="screenplay-entry-head">
+          <h3 class="screenplay-title">All the Beautiful Things</h3>
+          <span class="screenplay-read">Read Screenplay &rarr;</span>
+        </div>
+        <p class="screenplay-meta">Feature Film — Post-Production | Drama</p>
+        <p>A mixed-media (live action + claymation) feature exploring grief, family trauma, and healing. All the Beautiful Things earned recognition for its screenplay on Coverfly's Best of 2024 List and garnered media attention from Deadline Hollywood.</p>
+      </a>
+
+      <a class="screenplay-entry" href="screenplay_excerpts/RTP.pdf" target="_blank" rel="noopener">
+        <div class="screenplay-entry-head">
+          <h3 class="screenplay-title">Running to Places</h3>
+          <span class="screenplay-read">Read Screenplay &rarr;</span>
+        </div>
+        <p class="screenplay-meta">10-Episode Limited Series — Drama</p>
+        <p>A live-action series exploring resentment, addiction, and the pursuit of identity through competitive extreme sports.</p>
+      </a>
+
+      <a class="screenplay-entry" href="screenplay_excerpts/priest.pdf" target="_blank" rel="noopener">
+        <div class="screenplay-entry-head">
+          <h3 class="screenplay-title">My Brother the Priest</h3>
+          <span class="screenplay-read">Read Screenplay &rarr;</span>
+        </div>
+        <p class="screenplay-meta">10-Episode Limited Series — Mystery / Psychological Thriller</p>
+        <p>A live-action feature blending mystery, thriller, and horror while examining intergenerational trauma, poverty, and religious hypocrisy.</p>
+      </a>
+
+      <a class="screenplay-entry" href="screenplay_excerpts/THTOC.pdf" target="_blank" rel="noopener">
+        <div class="screenplay-entry-head">
+          <h3 class="screenplay-title">The Undeniable Innocence of Water Moccasins</h3>
+          <span class="screenplay-read">Read Screenplay &rarr;</span>
+        </div>
+        <p class="screenplay-meta">Feature Film — Drama</p>
+        <p>A coming-of-age drama about a girl with OCD struggling with the grief of losing her father and her emerging sexual identity as she grows up under the abuse of her stepfather.</p>
+      </a>
+
+      <div class="screenplay-entry is-coming-soon" aria-disabled="true">
+        <div class="screenplay-entry-head">
+          <h3 class="screenplay-title">Girls</h3>
+          <span class="screenplay-badge">In process of writing — Coming Soon</span>
+        </div>
+        <p class="screenplay-meta">Feature Film — Psychological Horror</p>
+        <p>A feature exploring jealousy, obsession, and the destructive pursuit of beauty.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">Ripple House</a>
+        <p>A woman's narrative production LLC bringing important stories to life
+          through entertainment—soul medicine in syntactic sugar!</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="classes.html">Classes</a>
+          <a href="about.html">About</a>
+          <a href="index.html">Home</a>
+          <a href="news.html">News</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="claymation.html">Claymation</a>
+          <a href="live-action.html">Live Action</a>
+          <a href="screenplays.html">Screenplays</a>
+          <a href="music.html">Music</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+19703190560">(970) 319-0560</a>
+          <a href="mailto:alewis@ripplehouse.media">alewis@ripplehouse.media</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ripple House</span>
+      <span>Built as a static site</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
