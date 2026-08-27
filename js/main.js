@@ -525,11 +525,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Active nav link ---------- */
-  const path = location.pathname.split('/').pop() || 'index.html';
+  /* ---------- Active nav link ----------
+     Normalizes both the current URL and each nav link's href down to a
+     bare page name (no leading/trailing slash, no .html) before comparing,
+     rather than comparing raw path strings. Locally the site is served as
+     plain files (pathname ends in e.g. "/about.html"), but Netlify's
+     deployed/pretty-URL paths can present the same page as "/about/" or
+     "/about" with no extension at all — the old exact-string match only
+     ever matched the local form, which broke .is-active (and, downstream,
+     the Work/Accolades pink+yellow active-state highlighting added above
+     via :has() in css/style.css) on the live Netlify site while it kept
+     working locally. Root "/" and "index.html" both normalize to "index"
+     so Home still matches at the site root either way. */
+  function normalizeNavPath(pathname) {
+    let p = pathname.split(/[?#]/)[0];             // strip any query/hash defensively
+    if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1); // trailing slash, but keep root "/" as-is
+    let seg = p.split('/').pop();                  // last path segment
+    if (!seg) seg = 'index';                        // root "/" -> "index"
+    seg = seg.replace(/\.html$/i, '');              // drop .html if present
+    return seg.toLowerCase();
+  }
+  const currentPage = normalizeNavPath(location.pathname);
   document.querySelectorAll('.nav-links a[href]').forEach(a => {
     const href = a.getAttribute('href');
-    if (href === path || (path === '' && href === 'index.html')) {
+    if (normalizeNavPath(href) === currentPage) {
       a.classList.add('is-active');
     }
   });
