@@ -97,7 +97,17 @@
 
   <div class="about-right">
     <div class="about-video-frame">
-      <video src="media/about_web.mp4" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" tabindex="-1"></video>
+      <!-- poster: a still frame at the video's native 1920x1080 (16:9), so it
+           fills/crops identically to the video itself under the ".about-video-frame
+           video" sizing rules in style.css (object-fit:fill on a box pre-sized to
+           that exact aspect ratio). This shows real content immediately on page
+           load instead of a blank frame while the video buffers — added to reduce
+           the perceived delay before anything appears. about_web.mp4 itself was
+           also re-encoded (same 79.68s length/quality target, scaled to a size
+           matched to how large it actually ever renders on screen instead of full
+           1920x1080) to cut its file size roughly in half, so less data has to
+           download before it can start playing too. -->
+      <video src="media/about_web.mp4" poster="media/about_poster.jpg" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="auto" tabindex="-1"></video>
       <div class="grain" aria-hidden="true"></div>
     </div>
   </div>

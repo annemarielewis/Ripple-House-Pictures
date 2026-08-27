@@ -294,6 +294,25 @@ p.lede{ font-size: 1.15rem; color: var(--parchment-70); max-width: 60ch; }
   pointer-events: auto;
 }
 
+/* ACTIVE STATE — Work/Accolades: reuses two colors that already carry this
+   exact meaning elsewhere on the site, rather than introducing anything new.
+   The submenu item matching the current page already turns
+   var(--brass-light) via the generic ".nav-links a.is-active" rule above —
+   is-active is added by the "Active nav link" logic in main.js to every
+   .nav-links link whose href matches the current page, submenu links
+   included — so nothing new was needed for that half.
+   What IS added here is the parent ("Work"/"Accolades") turning
+   var(--rose) — the same pink already used as a text color elsewhere (see
+   .mission-heading) — whenever one of its OWN submenu links carries
+   .is-active. :has() is what makes this automatic for both dropdowns off
+   one rule, with no per-page hardcoding and no JS changes. This selector's
+   specificity is intentionally high enough to also beat the plain
+   ".nav-links a:hover" rule, so the pink persists through hover — matching
+   how .is-active already outlasts hover on the top-level links above. */
+.has-submenu:has(> .submenu a.is-active) > .nav-parent{
+  color: var(--rose);
+}
+
 .nav-toggle{
   display:none;
   width: 40px; height: 40px;
