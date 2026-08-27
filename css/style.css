@@ -371,6 +371,63 @@ p.lede{ font-size: 1.15rem; color: var(--parchment-70); max-width: 60ch; }
   .submenu-caret{ display: none; }
 }
 
+/* ==========================================================================
+   NAV — iPhone/mobile-only refinements (≤640px)
+   The 860px block above builds the shared tablet+phone hamburger nav
+   (fixed full-screen menu, always-expanded submenus) — everything here is
+   scoped one breakpoint narrower and only touches the nav, so nothing
+   above 640px (including tablet-portrait, e.g. iPad at 768px) is affected
+   by any rule in this block; that range keeps exactly the appearance
+   defined above untouched.
+   Two things read poorly at true phone widths specifically:
+   1) The wordmark's own clamp() (".site-nav .brand", near the top of the
+      NAV rules) has a 2.55rem floor that 4.35vw drops below well above
+      640px, so on an iPhone it renders at a fixed ~41px no matter how
+      narrow the screen gets, crowding the toggle button instead of
+      scaling down with it. This gives phones their own clamp with a
+      lower floor; the logo mirrors it 1:1 exactly as it already does at
+      every other size (see .brand-logo's own comment above).
+   2) The Work/Accolades parent label currently inherits the exact same
+      15px/--parchment-70 styling as a real link (only .submenu a gets an
+      explicit dimmed/smaller treatment in the 860px block), so the one
+      non-navigating item in the list is visually the MOST prominent —
+      backwards from its role, and part of why the grouping reads as a
+      flat, ambiguous list rather than a heading with items under it.
+      This adds a hairline top rule to visually separate each parent+
+      children cluster from the plain links around it, and demotes the
+      parent label to a small, quiet heading (reusing the existing
+      --parchment-45 tone already used for secondary text elsewhere) while
+      giving its children the more prominent, readable treatment that
+      matches their being the actual destinations. Colors/fonts are all
+      existing site values — nothing new is introduced. The higher-
+      specificity ACTIVE STATE rule above (.has-submenu:has(...) .nav-parent)
+      still wins over this default color whenever a child is the active
+      page, so that pink highlighting is unaffected. */
+@media (max-width: 640px){
+  .site-nav .brand{ font-size: clamp(1.3rem, 6.5vw, 1.85rem); }
+  .brand-logo{ height: clamp(1.3rem, 6.5vw, 1.85rem); }
+  .brand-lockup{ gap: 8px; }
+
+  .has-submenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 14px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .nav-links a.nav-parent{
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--parchment-45);
+    cursor: default;
+  }
+  .nav-links a.nav-parent:hover{ color: var(--parchment-45); }
+  .submenu{ margin-top: 0; gap: 16px; }
+  .submenu a{ font-size: 14px; color: var(--parchment-70); }
+}
+
 /* tape-counter scroll readout — signature element */
 .tape-counter{
   position: fixed;
@@ -2103,6 +2160,24 @@ a.screenplay-entry:focus-visible .screenplay-read{ color: var(--rose); }
   .classes-hero .mission-rings{ display: block; width: 320px; height: 320px; }
   .classes-hero .mission-glow{ display: block; width: 380px; height: 380px; }
   .classes-message{ font-size: clamp(2.1rem, 9vw, 3rem); }
+}
+
+/* ---- Mission / pay-what-you-can section, below the hero above ----
+   Built entirely from the same generic .section/.section-head/.eyebrow
+   pattern used on every other page (see e.g. news.html's "More Coverage"
+   section) — nothing new there. Body copy is plain <p>, capped at the
+   same ~68ch reading width already used for long-form prose elsewhere
+   (.screenplay-entry p, .page-notice p). The two subheadings use --rose,
+   the color already established as this page's own accent via
+   .classes-message above, so they read as part of the same page rather
+   than a generic gray heading. .section already has its own 640px
+   padding override (see the base NAV/utility rules above), so no
+   mobile-specific override is needed here. */
+.classes-mission-copy{ max-width: 720px; }
+.classes-mission-copy p{ max-width: 68ch; }
+.classes-mission-copy h3{
+  color: var(--rose);
+  margin-top: 2em;
 }
 
 /* ==========================================================================
